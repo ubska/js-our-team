@@ -62,22 +62,46 @@ console.log(teamMembers);
 
 
 
-// Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
-for (let i = 0; i < teamMembers.length; i++) {
-    const member = teamMembers[i];
-    // console.log("Nome: " + member.nome + ", Ruolo: " + member.rule + ", Foto: " + member.photo);
-    console.log(member.nome);
+// // Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+
+// for (let i = 0; i < teamMembers.length; i++) {
+//     const member = teamMembers[i];
+//     // console.log("Nome: " + member.nome + ", Ruolo: " + member.rule + ", Foto: " + member.photo);
+//     console.log(member.nome);
     
+//     let memberName = document.createElement("div");
+//     memberName.innerHTML = member.nome;
+//     teamContainer.append(memberName);
+
+//     let memberRole = document.createElement("div");
+//     memberRole.innerHTML = member.role;
+//     teamContainer.append(memberRole);
+
+//     let memberImg = document.createElement("img");
+//     memberImg.src = member.photo;
+//     teamContainer.append(memberImg);
+
+// }
+
+
+// // Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+for (let key in teamMembers) {
+    const member = teamMembers[key];
+
+    console.log("Nome: " + member.nome);
+    console.log("Ruolo: " + member.role);
+    console.log("Foto: " + member.photo);
+    
+    // Stampare le stesse informazioni su DOM sotto forma di stringhe
+    let memberImg = document.createElement("img");
+    memberImg.src = member.photo;
+    teamContainer.append(memberImg);
+
     let memberName = document.createElement("div");
-            memberName.innerHTML = member.nome;
-            teamContainer.append(memberName);
+    memberName.innerHTML = member.nome;
+    teamContainer.append(memberName);
 
-            let memberRole = document.createElement("div");
-            memberRole.innerHTML = member.role;
-            teamContainer.append(memberRole);
-
-            let memberImg = document.createElement("img");
-            memberImg.src = member.photo;
-            teamContainer.append(memberImg);
-
+    let memberRole = document.createElement("div");
+    memberRole.innerHTML = member.role;
+    teamContainer.append(memberRole);
 }
