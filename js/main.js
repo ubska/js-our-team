@@ -7,13 +7,17 @@
 // MILESTONE 2:
 // Stampare le stesse informazioni su DOM sottoforma di stringhe
 
+// |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-// creare un array di oggetti per rappresentare i membri del team (nome, ruolo e foto)
+
+const teamContainer = document.querySelector('.team-container');
+
+// creare un array di oggetti per rappresentare i membri del team con (nome, ruolo e foto)
 const teamMembers = [
     {
         "nome": "Wayne Barnett",
         "role": "Founder & CEO",
-        "photo": "wayne-barnett-founder-console.jpg"
+        "photo": "img/wayne-barnett-founder-ceo.jpg"
     },
 
 
@@ -27,28 +31,28 @@ const teamMembers = [
     {
         "nome": "Walter Gordon",
         "role": "Office Manager",
-        "photo": "walter-gordon-office-manager.jpg"
+        "photo": "img/walter-gordon-office-manager.jpg"
 
     },
 
     {
         "nome": "Angela Lopez",
         "role": "Social Media Manager",
-        "photo": "angela-lopez-social-media-manager.jpg"
+        "photo": "img/angela-lopez-social-media-manager.jpg"
 
     },
 
     {
         "nome": "Scott Estrada",
         "role": "Developer",
-        "photo": "scott-estrada-developer.jpg"
+        "photo": "img/scott-estrada-developer.jpg"
 
     },
 
     {
         "nome": "Barbara Ramos",
         "role": "Graphic Designer",
-        "photo": "barbara-ramos-graphic-designer.jpg"
+        "photo": "img/barbara-ramos-graphic-designer.jpg"
 
     },
 
@@ -56,8 +60,24 @@ const teamMembers = [
 
 console.log(teamMembers);
 
+
+
 // Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
 for (let i = 0; i < teamMembers.length; i++) {
     const member = teamMembers[i];
-     console.log("Nome: " + member.nome + ", Ruolo: " + member.rule + ", Foto: " + member.photo);
+    // console.log("Nome: " + member.nome + ", Ruolo: " + member.rule + ", Foto: " + member.photo);
+    console.log(member.nome);
+    
+    let memberName = document.createElement("div");
+            memberName.innerHTML = member.nome;
+            teamContainer.append(memberName);
+
+            let memberRole = document.createElement("div");
+            memberRole.innerHTML = member.role;
+            teamContainer.append(memberRole);
+
+            let memberImg = document.createElement("img");
+            memberImg.src = member.photo;
+            teamContainer.append(memberImg);
+
 }
