@@ -8,7 +8,7 @@
 // Stampare le stesse informazioni su DOM sottoforma di stringhe
 
 
-// creare un array di oggetti per rappresentare i membri del team
+// creare un array di oggetti per rappresentare i membri del team (nome, ruolo e foto)
 const teamMembers = [
     {
         "nome": "Wayne Barnett",
@@ -55,3 +55,9 @@ const teamMembers = [
 ];
 
 console.log(teamMembers);
+
+// Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
+for (let i = 0; i < teamMembers.length; i++) {
+    const member = teamMembers[i];
+     console.log("Nome: " + member.nome + ", Ruolo: " + member.rule + ", Foto: " + member.photo);
+}
